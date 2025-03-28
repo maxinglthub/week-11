@@ -40,6 +40,7 @@ while y >= -280:
     points.append(raw)
     y = y - 20
 
+
 '''
 points(len(points))
 points[0][28].color("red")
@@ -47,8 +48,6 @@ points[28][28].color("red")
 points[28][0].color("red")
 points[14][14].color("red")
 '''
-
-wn.update()
 
 x = int(input("Pls enter x:"))
 y = int(input("Pls enter y:"))
@@ -59,3 +58,37 @@ while x < 0 or x > 28 or y < 0 or y > 28:
     y = int(input("Pls enter y:"))
 
 points[x][y].color("red")
+
+x1 = int(input("Pls enter x1:"))
+y1 = int(input("Pls enter y1:"))
+
+points[14 - x1][14 + y1].color("green")
+
+x2 = int(input("Pls enter x2:"))
+y2 = int(input("Pls enter y2:"))
+
+points[14 - x2][14 + y2].color("green")
+
+#         y2 - y1
+#slape = --------
+#         x2 - x1
+
+
+
+A = 2 * (y2 - y1)
+B = A - 2 * (x2 - x1)
+P = A - (x2 - x1)
+
+x = x1
+y = y1
+
+while x < x2:
+    print(P)
+    if P > 0:
+        P = P + A
+    else:
+        P = P + B
+        y = y + 1
+    points[14 - y][14 + x].color("blue")
+
+wn.update()
