@@ -14,7 +14,7 @@ count = 0
 
 while count < 4:
     pen.forward(600)
-    pen.left(90)
+    pen.right(90)
     count = count + 1
 
 #------------------------
@@ -29,6 +29,7 @@ while y >= -280:
     raw = []
     while x <= 280:
         t = turtle.Turtle()
+        t.speed(0)
         t.up()
         t.shape("square")
         t.shapesize(0.9, 0.9)
@@ -38,3 +39,23 @@ while y >= -280:
     
     points.append(raw)
     y = y - 20
+
+'''
+points(len(points))
+points[0][28].color("red")
+points[28][28].color("red")
+points[28][0].color("red")
+points[14][14].color("red")
+'''
+
+wn.update()
+
+x = int(input("Pls enter x:"))
+y = int(input("Pls enter y:"))
+
+while x < 0 or x > 28 or y < 0 or y > 28:
+    print("Out of range, pls enter again")
+    x = int(input("Pls enter x:"))
+    y = int(input("Pls enter y:"))
+
+points[x][y].color("red")
